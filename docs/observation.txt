@@ -1,0 +1,23 @@
+https://mui.com/material-ui/getting-started/installation/
+
+install react material componentes 
+
+npm i crypto-js @types/crypto-js --legacy-peer-deps
+
+como utilizar 
+
+salvar o conbteudo 
+
+import { AES, enc } from 'crypto-js';
+
+const value = AES.encrypt(JSON.stringify(state), SECRET_KEY)
+
+        localStorage.setItem(LOCAL_STORAGE_KEY, value.toString())
+
+recuperar 
+
+ const todoData = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+            if (todoData) {
+                const bytes = AES.decrypt(todoData, SECRET_KEY)
+                const decryptedData: Todo[] = JSON.parse(bytes.toString(enc.Utf8))
